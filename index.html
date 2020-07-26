@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html lang = "en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1">
+		<title>QLD Real Estate through the years</title>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+		integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+		crossorigin=""/>
+	</head>
+	<body>
+		<div id="loading"></div>
+		<div id="intro">
+			<img id = "introAgent" src="images/human1.png" alt="The real estate agent"/>
+			<p id = "introText"></p>
+		</div>
+		<div id="imageSizer">
+			<img id="imageClick" src="images/b.png" alt="large image of map"/>
+		</div>
+		<section id="menu">
+			<img id= "out" src="images/arrowOut.png" alt="menu out"/>
+			<img id= "in" src="images/arrowIn.png" alt="menu in"/>
+			<ul>
+				<a id="homeButton" href="index.html"<li>HOME</li></a>
+				<li id="htp">How To Play</li>
+				<li id="au">About Us</li>
+				<li id ="cu">Contact Us</li>
+			</ul>
+			<img id= "menuImage" src="images/menuMain.png" alt="The menu"/>
+		</section>
+		<aside>
+			<img id = "agent" src="images/human1.png" alt="The real estate agent"/>
+			<img id = "bubble" src="images/bubble1.png" alt="Agents bubble"/>
+			<img id = "bubbleClient" src="images/bubble2.png" alt="Clients Bubble"/>
+			<p id="name">Sonia and Noel</p>
+			<p id="wwl">We would like</p>
+			<div id ="attributes">
+				<p id ="att1">AttributeOne</p>
+				<p id ="att2">AttributeTwo</p>
+				<p id ="att3">AttributeThree</p>
+			</div>
+			<p id = "yes">yes</p>
+			<p id = "no">no</p>
+		</aside>
+		<section id = "popup">
+			<h3 class="close">CLOSE</h3>
+			<div id= "aboutUs">
+				<p>Universally Challenged is a student team based out of The University of Queensland. Brought together through fate and Design Computing Studio I - Interactive Technology (DECO1800).
+					Initial planning phases started in week 3 semester 2 of 2018, and took roughly 10 weeks to create the product before you.</p>
+				<p>This website utilises the State Library of Queensland’s Real Estate Maps’ API data to create a dynamic and unique experience 
+				for each visit. Each team member’s major roles and contact emails are listed below:</p>
+				<ul>
+					<li>Curtis Green - Leader	s4432904@student.uq.edu.au</li>
+					<li>Isabella Madamba - Researcher	s4484252@student.uq.edu.au</li>
+					<li>Johann Steininger - Researcher	s4412038@student.uq.edu.au</li>
+					<li>Duojia Zheng - Programmer	s4450327@student.uq.edu.au</li>
+					<li>Yuki Ono - Programmer	s4525519@student.uq.edu.au</li>
+				</ul>
+				<img src="images/team.png" alt="Company Logo"/>
+			</div>
+			<div id="contactUs">
+				<form>
+					Feel free to ask the team any questions, any honest feedback on how the site was or some cool suggestions on how we could improve!<br><br>
+					First name:<br>
+					<input type="text" name="firstname"><br>
+					Last name:<br>
+					<input type="text" name="lastname"><br>
+					Email:<br>
+					<input type="text" name="email"><br>
+					<input type="radio" name="gender" value="male" checked> Male<br>
+					<input type="radio" name="gender" value="female"> Female<br>
+					<input type="radio" name="gender" value="other"> Other<br>
+					<textarea rows="6" cols="50"></textarea><br>
+					<input id="submit" type="submit" value="Submit">
+				</form>
+			</div>
+			 <video width="320" autoplay="autoplay" height="240" controls>
+				 <source src="videos/prototype.mp4" type="video/mp4">
+				  Your browser does not support the video tag.
+             </video>
+			 <h2 id="rewatch">Watch the intro again here</h2>
+			<img id = "base" src="images/base.png" alt="base of the pop up window"/>
+		</section>
+		<section id="markerScreen">
+			<h1 id = "title">Estate map of the village of Nona, near Milton, Brisbane, 1865</h1>
+			<img id = "markerImage" src="" alt="marker Image"/>
+			<h2 id="attTitle">Attributes</h2>
+			<div id ="attributesMarker">
+				<p id = "markerOne">AttributeOne</p>
+				<p id = "markerTwo">AttributeTwo</p>
+				<p id = "markerThree">AttributeThree</p>
+			</div>
+			<h3 id="pick">PICK</h3>
+			<h3 class="close">CLOSE</h3>
+			<img id = "star1" src="images/star.png" alt="Empty Star"/>
+			<img id = "star2" src="images/star.png" alt="Empty Star"/>
+			<img id = "star3" src="images/star.png" alt="Empty Star"/>
+			<img id = "markerBase" src="images/base.png" alt="marker Info"/>
+		</section>
+		<h1 id="points">Points: 0</h1>
+		<img id="pointHolder" src="images/pointHolder.png" alt="points"/>
+		<img id="grade" src="images/aplus.png" alt="grade"/>
+		<img id= "logo" src="images/logo.png" alt="Company Logo"/>
+		<img id= "logoBack" src="images/logoBack.png" alt="Company Logo"/>
+		<div id="mapid"></div>
+	</body>
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+	integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+	crossorigin=""></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/script.js"></script>
+</html>

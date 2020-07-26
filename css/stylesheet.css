@@ -1,0 +1,592 @@
+/* The main font for the site */
+ @font-face {
+    font-family: "Market Deco";
+    src: url(../fonts/Market_Deco.ttf);
+}
+
+/*
+Makes the map background fill the screen and allow no overflow from the 
+screens fixed postion. Also sets the primary text for the website.
+*/
+body {
+    padding: 0;
+    margin: 0;
+	overflow:hidden;
+	font-family:"Market Deco",Arial;
+}
+
+/* The loading screen the user is intially met with */
+#loading {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: white url(../images/loading.gif) no-repeat center center;
+	top: 0;
+	left: 0;
+	transition: all 0.5s ease;
+	z-index: 11;
+}
+
+/* class to hide the animation */
+body.loaded #loading {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* The styling for the intoduction animation */
+#intro{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/Background.png") ;
+	top: 0;
+	left: 0;
+	transition: all 0.5s ease;
+	z-index: 9;
+}
+
+/* class to hide the intro animation */
+body.completed #intro {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* class to hide the intro animation */
+body.again #intro {
+	opacity: 100;
+	visibility: visible;
+}
+
+/* The agent image used in the intro */
+#introAgent{
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	width: 30%;
+}
+
+/* The text that the agent says */
+#intro p{
+	position: absolute;
+	bottom: 5%;
+	left: 8%;
+	padding: 3%;
+	border: black solid 6px;
+	border-radius: 25px;
+	background-color: white;
+	font-size: 2vw;
+	right:8%;
+}
+
+/* Sets the map to fill the entire browser */
+html, body, #mapid {
+    height: 100%;
+    width: 100%;
+	z-index: 0;
+}
+
+/* Sets the area for the menu */
+section{
+	position:absolute;
+	z-index: 4;
+	right:0%;
+	top: 5%;
+	width:26.2%;
+}
+
+/* Sets the image container for the menu to fill the section */
+section img{
+	width: 100%;
+}
+
+/* Organises and positions the list elements in the menu */
+section ul{
+	display: flex;
+	flex-direction:column;
+	position:absolute;
+	top: 4%;
+	right: 5%;
+}
+
+/* Styles the menu text elements and spaces them correctly */
+section ul li{
+	text-decoration: none;
+	color: black;
+	font-size: 2.33vw;
+	padding-top: 15%;
+	list-style-type: none;
+}
+
+/* Formats/styles the home button */
+#homeButton{
+	text-decoration: none;
+	color: black;
+	font-size: 3.5vw;
+	padding:0;
+	padding-left: 4%;
+	border: none;
+	cursor: pointer;
+}
+
+/* Change the color of the Home button text on hover */
+#homeButton:hover{
+	color: white;
+}
+
+/* formats the how to play button */
+#htp{
+	font-size:2.2vw;
+	padding-top:16.5%;
+	cursor: pointer;
+}
+
+/* correctly posistions and formats the how to play video */
+video{
+	width: 75%;
+	position:absolute;
+	z-index:5;
+	top: 25%;
+	right: 12.5%;
+}
+
+/* Positions the re-watch button */
+#rewatch{
+	position: absolute;
+	z-index: 5;
+	top: 60%;
+	left: 26%;
+	padding: 2%;
+	background-color: #5379e8;
+	border: 4px solid black;
+	border-radius: 25px;
+	cursor: pointer;
+	color:white;
+}
+
+/* Chnages the colors of the re-watch button on hover */
+#rewatch:hover{
+	background-color: white;
+	color: #5379e8;
+}
+
+/* formats the about us menu button */
+#au{
+	padding-top:18%;
+	padding-left: 9%;
+	cursor: pointer;
+}
+
+/* Changes the how to play button when hovered to white */
+#htp:hover{
+	color:white;
+}
+
+/* Changes the about us when hovered to white */
+#au:hover{
+	color:white;
+}
+
+/* Changes the contact us button when hovered to white */
+#cu:hover{
+	color:white;
+	cursor: pointer;
+}
+
+/* Formats the forms text and its spacing */
+form{
+	padding-top: 5%;
+}
+
+/* Styles the submit button for conatct us */
+#submit{
+	font-family:"Market Deco",Arial;
+	font-size: 1.1vw;
+	background-color: green;
+	color: white;
+	border: 2px solid black;
+}
+
+/* Restyles the button when hovered */
+#submit:hover{
+	background-color: white;
+	color: green;
+}
+
+/* The little tab that closes the menu positioning */
+#in{
+	width: 15%;
+	position: absolute;
+	z-index:5;
+	right:85%;
+	top:32.3%;
+	cursor: pointer;
+}
+
+/* The little tab that opens the menu positioning */
+#out {
+	width: 15%;
+	position: absolute;
+	z-index:5;
+	right:85%;
+	top:32.3%;
+	cursor: pointer;
+}
+
+/* Positions the logo and makes it have no click event */
+#logo{
+	position: absolute;
+	z-index: 2;
+	bottom: -5%;
+	right:0%;
+	width:28%;
+	pointer-events: none;
+}
+
+/* postions the logo background and links it to its animation */
+#logoBack{
+	position: absolute;
+	z-index: 1;
+	bottom: -5%;
+	right:0%;
+	width:28%;
+	pointer-events: none;
+	-webkit-animation: rotation 17s infinite linear;
+}
+
+/* Makes the backdrop rotate infinitly */
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+/* Positions the score */
+body h1{
+	top:0%;
+	left:-285px;
+	position: absolute;
+	font-size: 1.6vw;
+	z-index:4;
+}
+
+/* Holds the score acts as its backdrop/container */
+#pointHolder{
+	top:0;
+	left:-300px;
+	position:absolute;
+	z-index: 3;
+	width: 10%;
+}
+
+/* The popup information screen base layout */
+#popup{
+	width: 40%;
+	right: 15%;
+	z-index:3;
+}
+
+/* sets the text and positioning of the about us popup */
+#popup div{
+	font-family: Arial;
+	color: black;
+	font-size: 1vw;
+	position:absolute;
+	top:12%;
+	left:5%;
+	right:5%;
+}
+
+/* positions the list elements */
+#popup div ul{
+	top: 100%;
+	right: 25%;
+	left: 15%;
+	text-align:center;
+}
+
+/* Positions and spaces the list elements */
+#popup div ul li{
+	font-family: Arial;
+	color: black;
+	font-size: 1vw;
+	padding-top:2%;
+	padding-bottom:2%;
+}
+
+/* Positions the image of the company logo in the popup */
+#popup div img{
+	width: 15%;
+	left: 7.5%;
+	top: 255%;
+	position: absolute;
+}
+
+/* Makes the base image fill the entire popup sections background */
+#base{
+	width: 100%;
+}
+
+/* Positions the agent and clients */
+#agent{
+	position: absolute;
+	z-index: 1;
+	bottom: -650px;
+	left: 40px;
+	width: 475px;
+	pointer-events: none;
+}
+
+/* Formats the client and agent speech bubble text */
+aside > p{
+	position: absolute;
+	text-decoration: none;
+	color: black;
+	font-size: 40px;
+	z-index: 1;
+	border: 2px solid black;
+	border-radius: 5px;
+	bottom: 582.5px;
+	display: flex;
+}
+
+/* Positions and formats the speech bubble */
+#bubble{
+	position: absolute;
+	width: 0px;
+	bottom: 558px;
+	left: 190px;
+	z-index: 1;
+}
+
+/* Positions the clients name in the speech bubble */
+#name{
+	Left: 320px;
+	bottom: 650px;
+	border: none;
+	font-size: 25px;
+	z-index:1;
+}
+
+/* Postions the clients wants or mood in the speech bubble */
+#wwl{
+	Left: 360px;
+	bottom: 645px;
+	border: none;
+	font-size: 15px;
+	z-index:1;
+}
+
+/* Sets the text and attribute listings */
+aside div{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 1;
+	color: black;
+	font-size: 17px;
+	text-align: center;
+	Left: 355px;
+	bottom: 557.5px;
+	padding:0;
+	margin:0;
+	line-height:0;
+}
+
+/* Positions the clients speech bubble */
+#bubbleClient{
+	position: absolute;
+	width: 0px;
+	bottom: 500px;
+	left: 240px;
+	z-index: 1;
+}
+
+/* Positions the yes button inside the agents speech bubble */
+#yes {
+	left: 280px;
+	cursor: pointer;
+	animation-name: size;
+	animation-duration: 1.2s;
+	animation-iteration-count: infinite;
+}
+
+/* Positions the no button inside the agents speech bubble */
+#no{
+	left: 390px;
+	cursor: pointer;
+	animation-name: size;
+	animation-duration: 1.2s;
+	animation-iteration-count: infinite;
+}
+
+/* Animates the yes and no button to slightly increase and decrease their size */
+@keyframes size {
+	0%, 100% {
+		font-size: 42px;
+	}
+	50% {
+		font-size: 41px;;
+	}
+}
+
+/* Changes the yes buttons back ground color to green and text white on hover */
+#yes:hover{
+	background-color: green;
+	color:white;
+	animation-name: stop;
+}
+
+/* Changes the no buttons back ground color to red and text white on hover */
+#no:hover {
+	background-color: red;
+	color: white;
+	animation-name: stop;
+}
+
+/* Positions the marker screens */
+#markerScreen{
+	width: 40%;
+	right: 15%;
+	top:5%;
+	z-index:3;
+	position:absolute;
+}
+
+/* Positions and sets the text for the title of the marker screen */
+#markerScreen h2{
+	position: absolute;
+	font-size:1.3vw;
+	top: 60%;
+	left:39%;
+}
+
+/* The background image for the marker screen */
+#markerBase{
+	width:100%;
+}
+
+/* Positions and formats text for the attributes title */
+#markerScreen h1{
+	text-align: center;
+	font-size:1.9vw;
+	position: absolute;
+	left: 2.5%;
+	right: 2.5%;
+}
+
+/* Positions the marker images from the API */
+#markerImage{
+	width:100%;
+	position:absolute;
+	left: 34%;
+	top:15%;
+	max-width:240px;
+}
+
+/* Positions the markers attributes underneath the atrributes title */
+#attributesMarker {
+	position: absolute;
+	font-size:1.0vw;
+	top: 65%;
+	left:29%;
+	text-align: center;
+}
+
+/* Positions and creates the pick button for the marker popup */
+#pick{
+	position:absolute;
+	left:7.5%;
+	top: 70%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	padding-right: 5%;
+	padding-left:5%;
+	font-size:3.0vw;
+	color:white;
+	background-color:green;
+	border: 4px solid black;
+    border-radius: 25px;
+	cursor: pointer;
+}
+
+/* Positions and creates the close button for the marker popup */
+.close {
+	position:absolute;
+	right:7.5%;
+	top: 70%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	padding-right: 5%;
+	padding-left:5%;
+	font-size:3.0vw;
+	color:white;
+	background-color:red;
+	border: 4px solid black;
+    border-radius: 25px;
+	cursor: pointer;
+	z-index:5;
+}
+
+/* The container for the enlarged image */
+#imageSizer{
+	position: absolute;
+	width: 550px;
+	left: 90px;
+	top: 50px;
+}
+
+/* The enlarged image */
+#imageClick{
+	z-index: 10;
+	position:absolute;
+	width: 100%;
+	border: 2px black solid;
+}
+
+/* Switches the pick buttons text and background colours when hovered */
+#pick:hover{
+	background-color:white;
+	color:green;
+}
+
+/* Switches the close buttons text and background colours when hovered */
+.close:hover{
+	background-color:white;
+	color:red;
+}
+
+/* Positions the grade */
+#grade{
+	z-index:5;
+	position: absolute;
+	left:10%;
+	bottom: 15%;
+	width: 30%;
+}
+
+/* Positions and formats the first star */
+#star1{
+	position: absolute;
+	width: 10%;
+	bottom: 3.5%;
+	left: 10%;
+}
+
+/* Positions and formats the second star */
+#star2{
+	position: absolute;
+	width: 10%;
+	bottom: 3.5%;
+	left: 42.5%
+}
+
+/* Positions and formats the third star */
+#star3{
+	position: absolute;
+	width: 10%;
+	bottom: 3.5%;
+	left: 77.5%
+}
